@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {},
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "next",
+      "build": "next build",
+      "start": "next start"
+   },
+  "name": "iso_cv",
+  "version": "1.0.0",
+  "description": "This is a CV belonging solely to Israel Gayina Atsu",
+  "main": "pages/index.js",
+  "repository": "https://github.com/IsotopeAlpha/MyCV.git",
+  "author": "Israel Gayina ",
+  "license": "MIT"
+}
