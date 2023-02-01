@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import Layout from "../../Layout/components/layout";
+import Layout from "../../Layout/components/layout.js";
 
 export default function FirstPost() {
     return (<Layout>
