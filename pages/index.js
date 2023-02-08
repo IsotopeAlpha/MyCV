@@ -1,8 +1,18 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../Layout/components/layout.js';
 import utilStyles from '../styles/utils.module.css';
+import { getSortedPostsData } from '../lib/posts';
 
-export default function Home() {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+export default function Home({ allPostsData }) {
   return (
     <Layout home>
       <Head>
@@ -18,6 +28,20 @@ export default function Home() {
           Provides reliably actionable code and software assets for customers and internal data libraries. <br/>Enthusiastic technical professional with a complete understanding of the entire software development cycle. 
           A hardworking and passionate job seeker with strong organizational skills eager to secure an entry-level Software Developer position. 
           Ready to help the team achieve company goals. Very good in troubleshooting and diagnosing computers for hidden faults and finding solutions to them.</p>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
       </section>
     </Layout>
   );
